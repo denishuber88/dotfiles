@@ -100,3 +100,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.bash_aliases
+
+# kubectl autocompletion
+if [ $command[kubectl] ]; then source <(kubectl completion zsh); fi
