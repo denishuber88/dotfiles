@@ -41,3 +41,4 @@ function copy() {
 copy ".tmux.conf" "$HOME"
 copy ".bash_alias" "$HOME"
 copy ".vimrc" "$HOME"
+copy ".zshrc" "$HOME"
