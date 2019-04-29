@@ -1,8 +1,3 @@
-# Enable TMUX on startup; but not in intellij
-if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then
-	ZSH_TMUX_AUTOSTART=true
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
