@@ -10,11 +10,11 @@ function utc() {
 	echo $(date -u +"%y-%m-%dT%H:%M:%SZ")
 }
 
-## $1 file to copy
-## $2 destination folder without trailing slash
+## $1 file to copy; absolute path
+## $2 destination folder without trailing slash; absolute path
 function copy() {
 	src_file=$1
-	dest_file="$2/$src_file"
+	dest_file="$2/$(basename $src_file)"
 
 	if [ -f "$dest_file" ]; then
 		# setup dest directory
@@ -22,7 +22,7 @@ function copy() {
 		mkdir -p "$tmp_dir"
 
 		# backup dest file
-		dest_file_bak="$tmp_dir/.tmux.conf.$(utc)"
+		dest_file_bak="$tmp_dir/$(basename $src_file).$(utc)"
 		if ! cp "$dest_file" "$dest_file_bak" ; then
 			echo "failed to back up $dest_file to $dest_file_bak"
 			exit 1
@@ -37,8 +37,8 @@ function copy() {
 	fi
 }
 
-
-copy ".tmux.conf" "$HOME"
-copy ".bash_alias" "$HOME"
-copy ".vimrc" "$HOME"
-copy ".zshrc" "$HOME"
+abs_path="$(dirname $(readlink -m $0))"
+copy "$abs_path/.tmux.conf" "$HOME"
+copy "$abs_path/.bash_aliases" "$HOME"
+copy "$abs_path/.vimrc" "$HOME"
+copy "$abs_path/.zshrc" "$HOME"
