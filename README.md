@@ -1,8 +1,8 @@
 # dotfiles
-Dot files for Linux
+Dotfiles for Linux
 
 # Installing
 Example
 ```bash
-stow bash
+stow -t $HOME bash i3 termite tmux vim zsh
 ```
