@@ -2,10 +2,7 @@
 Dot files for Linux
 
 # Installing
-Execute
-
+Example
 ```bash
-./install.sh
+stow bash
 ```
-
-The script backups existing dotfiles to `/tmp/dotfiles` directory. The operating system will delete them after a shutdown.
