@@ -1,35 +1,44 @@
 " Don't try to be vi compatible
 set nocompatible
+filetype off
 
-" Set to auto read when a file is changed from the outside
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
+"Plugin 'edkolev/tmuxline.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'flazz/vim-colorschemes'
+call vundle#end()            " required
+filetype plugin indent on    " required
+filetype indent on
+
 set autoread
-
-" Set line numbers
 set number
 set relativenumber
-
-" Status bar
 set laststatus=2
-
-" Syntax Highlighting
-syntax on
-
-" Load indentation rules corresponding to file type 
-filetype indent on
 set autoindent
-
-" Tab settings
 set tabstop=2
 set shiftwidth=4
 set expandtab
 set softtabstop=2
-
-" Vertical scroll
-set scrolloff=5
-
-" Wild Menu
 set wildmenu
 set wildmode=longest,list,full
+set noshowmode
+syntax on
+
+" colors
+" :h g:lightline.colorscheme for full list
+" wombat, powerlineish, jellybeans, darcula, molokai
+let g:lightline = {
+      \ 'colorscheme': 'wombat'
+      \ }
+
+" wombat256, molokai, kolor, Benokai, delek, mango, monokai-chris, jellybeans
+colorscheme molokai
 
 " copy and paste to clipboard
 vnoremap  <F6>     :!xclip -f -sel clip<CR>

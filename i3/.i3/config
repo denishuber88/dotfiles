@@ -72,29 +72,22 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+set $left h
+set $down j
+set $up k
+set $right l
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # workspace back and forth (with/without active container)
 #workspace_auto_back_and_forth yes
@@ -149,6 +142,20 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+
+set $ls DP-1-1 
+set $ms DP-1-2 
+set $rs eDP1 
+
+bindsym $mod+F9 workspace $ws1; move workspace to output $ls; \
+  workspace $ws2; move workspace to output $ms; \
+  workspace $ws3; move workspace to output $rs; \
+  workspace $ws4; move workspace to output $ls; \
+  workspace $ws5; move workspace to output $ms; \
+  workspace $ws6; move workspace to output $rs; \
+  workspace $ws7; move workspace to output $ls; \
+  workspace $ws8; move workspace to output $ms; \
+  workspace $ws1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
