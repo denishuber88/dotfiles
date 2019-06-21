@@ -157,6 +157,9 @@ bindsym $mod+F9 workspace $ws1; move workspace to output $ls; \
   workspace $ws8; move workspace to output $ms; \
   workspace $ws1
 
+bindsym $mod+F10 exec $HOME/bin/work.sh 
+bindsym $mod+F12 exec $HOME/bin/reset.sh 
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
