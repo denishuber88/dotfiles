@@ -43,10 +43,10 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec termite -e 'alsamixer'
-#exec --no-startup-id pulseaudio
+#bindsym $mod+Ctrl+m exec termite -e 'alsamixer'
+#exec --no-startup-id "pulseaudio --daemonize"
 #exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
+bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -142,23 +142,6 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
-
-set $ls DP-1-1 
-set $ms DP-1-2 
-set $rs eDP1 
-
-bindsym $mod+F9 workspace $ws1; move workspace to output $ls; \
-  workspace $ws2; move workspace to output $ms; \
-  workspace $ws3; move workspace to output $rs; \
-  workspace $ws4; move workspace to output $ls; \
-  workspace $ws5; move workspace to output $ms; \
-  workspace $ws6; move workspace to output $rs; \
-  workspace $ws7; move workspace to output $ls; \
-  workspace $ws8; move workspace to output $ms; \
-  workspace $ws1
-
-bindsym $mod+F10 exec --no-startup-id $HOME/bin/work.sh 
-bindsym $mod+F12 exec --no-startup-id $HOME/bin/reset.sh 
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

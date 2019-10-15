@@ -100,3 +100,8 @@ alias t=todo.sh
 
 # kubectl autocompletion
 if [ $command[kubectl] ]; then source <(kubectl completion zsh); fi
+
+# start ssh-agent
+eval `ssh-agent -s`
+ssh-add
+
