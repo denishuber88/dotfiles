@@ -12,6 +12,7 @@ Plugin 'itchyny/lightline.vim'
 "Plugin 'edkolev/tmuxline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'leafgarland/typescript-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype indent on
